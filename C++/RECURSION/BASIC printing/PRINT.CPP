@@ -14,10 +14,6 @@ class recursion{
     void linear_backtracking(int);
     void reverse_backtracking(int,int);
 
-    recursion(int d,int p){
-        data = d;
-        n = p;
-    }
 };
 void recursion::recur(int data){
     
@@ -54,11 +50,11 @@ void recursion::reverse_backtracking(int data,int n){
     if(data == n)
       return;
     reverse_backtracking(++data,n);
-    cout<<data<<"endl";
+    cout<<data<<endl;
 }
 
 int main(){
-    recursion obj = recursion(0,5);
+    recursion obj;
     cout<<"\nPrint name 5 times\n";
     obj.recur(0);
     cout<<"\nPrint 1 to N\n";
@@ -67,5 +63,7 @@ int main(){
     obj.reverse(5);
     cout<<"\nPrint 1 to N by backtracking\n";
     obj.linear_backtracking(5);
+    cout<<"\nPrint N to 1 by backtracking\n";
+    obj.reverse_backtracking(0,5);
     return 0;
 }
